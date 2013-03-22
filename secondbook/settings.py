@@ -136,6 +136,8 @@ INSTALLED_APPS = (
     'django_extensions',
     'easy_thumbnails',
     'compressor',
+
+    'profiles',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -166,6 +168,8 @@ LOGGING = {
         },
     }
 }
+
+AUTH_USER_MODEL = 'profiles.User'
 
 COMPRESS_PARSER = 'compressor.parser.LxmlParser'
 COMPRESS_ENABLED = True
