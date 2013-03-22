@@ -1,4 +1,14 @@
 *.log
 *.pot
 *.pyc
-local_settings.py
+.DS_Store
+media/*
+static/*
+vendors/*
+*.pyc
+*.pyo
+*~
+*.db
+*.sqlite
+.sass-cache
+settings_local.py
