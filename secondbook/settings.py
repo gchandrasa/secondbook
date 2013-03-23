@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'easy_thumbnails',
     'compressor',
+    'registration',
 
     'profiles',
 )
