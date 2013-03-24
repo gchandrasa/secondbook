@@ -171,6 +171,7 @@ LOGGING = {
 }
 
 AUTH_USER_MODEL = 'profiles.User'
+LOGIN_REDIRECT_URL = '/'
 
 COMPRESS_PARSER = 'compressor.parser.LxmlParser'
 COMPRESS_ENABLED = True

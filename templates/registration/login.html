@@ -2,22 +2,32 @@
 
 {% block title %}Login{% endblock %}
 
+{% block class_root %}login-signup-page{% endblock %}
+
 {% block content %}
 <div class="container content">
   <div class="row-fluid">
-    <div class="span4 login-box">
+    <div class="span4{% if login %} active{% endif %} box">
       <h2>Log in</h2>
-      <form method="post" action="{% url 'auth_login' %}">
+      <form method="post" action="{% url 'profiles:auth_login' %}">
         {% csrf_token %}
 
         {{ form.as_p }}
 
-        <input type="submit" value="Login" class="btn btn-success" />
+        <input type="submit" value="Log me in!" class="btn btn-large btn-block btn-success" />
         <input type="hidden" name="next" value="{{ next }}" />
       </form>
     </div>
-    <div class="span4">
+    <div class="span4{% if registration %} active{% endif %} box">
       <h2>New user?</h2>
+      <form method="post" action="">
+        {% csrf_token %}
+
+        {{ registration_form.as_p }}
+
+        <input type="submit" value="Sign me up!" class="btn btn-large btn-block btn-success" />
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
     </div>
     <div class="span4">
       <h2>Latest books</h2>

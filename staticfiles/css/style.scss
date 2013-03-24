@@ -1,11 +1,43 @@
+$midnight_blue: #2c3e50;
+$belize_hole: #2980b9;
+$pumpkin: #d35400;
+$sun_flower: #F1C40F;
+
 body {
 
 }
 .content {
-    margin-top: 60px;
+    margin-top: 90px;
 }
 
 .login-box {
-    background: #EEE;
-    padding: 0px 20px;
+
+
+}
+
+.nav {
+    span {
+        color: $sun_flower;
+        display: block;
+        padding: 12px 15px 15px;
+    }
+}
+
+.alert {
+    margin-top:47px;
+}
+
+.profile-page {
+    .avatar {
+        margin-bottom: 25px;
+    }
+}
+
+.login-signup-page {
+    .box.active {
+        background: #EEE;
+    }
+    .box {
+        padding: 0px 20px;
+    }
 }

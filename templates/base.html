@@ -20,7 +20,7 @@
 
         <script src="{{ STATIC_URL }}js/modernizr-2.6.2.min.js"></script>
     </head>
-    <body>
+    <body class="{% block class_root %}{% endblock %}">
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
@@ -38,14 +38,29 @@
                         </ul>
                         <div class="pull-right">
                             <ul class="nav">
-                                <li><a href="{% url 'auth_login' %}">Login</a></li>
-                                <li><a href="">Sign up</a></li>
+                                {% if user.is_authenticated %}
+                                <li><span>Hi, {% firstof user.get_full_name user.email %}</span></li>
+                                <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+                                {% else %}
+                                <li><a href="{% url 'profiles:auth_login' %}">Login</a></li>
+                                <li><a href="{% url 'registration:register' %}">Sign up</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
         </div>
+
+        {% if messages %}
+            {% for message in messages %}
+            <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+                <div class="container">
+                    {{ message }}
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
 
         {% block content %}
         {% endblock %}
