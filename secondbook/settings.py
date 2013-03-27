@@ -182,6 +182,10 @@ COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'scss {infile} {outfile}'),
 )
 
+TEST_RUNNER = 'discover_runner.DiscoverRunner'
+TEST_DISCOVER_TOP_LEVEL = path.dirname(PROJECT_ROOT)
+TEST_DISCOVER_ROOT = path.join(TEST_DISCOVER_TOP_LEVEL, 'tests')
+
 FIXTURE_DIRS = (
     path.join(PROJECT_ROOT, "fixtures"),
 )
