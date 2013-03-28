@@ -5,7 +5,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = patterns('',
     url(r'^logout/$',
         auth_views.logout,
-        {'template_name': 'registration/logout.html'},
+        {'template_name': 'registration/logout.html', 'next_page': '/'},
         name='auth_logout'),
     url(r'^password/change/$',
         auth_views.password_change,
