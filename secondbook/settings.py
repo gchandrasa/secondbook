@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     'registration',
 
     'profiles',
+    'books',
 )
 
 # A sample logging configuration. The only tangible logging
