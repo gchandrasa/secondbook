@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+<div class="container content">
+    <h1>{{ book.title }}</h1>
+
+    Rp. {{ book.price }}
+    <div>
+        <img src="{% thumbnail book.picture 300x300 %}" alt="{{ book.title }}">
+    </div>
+</div>
+{% endblock %}

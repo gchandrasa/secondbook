@@ -6,7 +6,7 @@ from django.conf import settings
 class Book(models.Model):
     isbn = models.CharField("ISBN", max_length=30, blank=True)
     title = models.CharField(max_length=255)
-    slug = models.CharField(max_length=255)
+    slug = models.CharField(max_length=255, editable=False)
     authors = models.CharField(max_length=255, blank=True)
     publisher = models.CharField(max_length=255, blank=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL)

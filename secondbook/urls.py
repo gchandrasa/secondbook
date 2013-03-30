@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^', include('registration.auth_urls')),
     url(r'^', include('registration.urls', namespace='registration')),
     url(r'^', include('profiles.urls', namespace='profiles')),
+    url(r'^books/', include('books.urls', namespace='books')),
 )
 
 if settings.DEBUG:
