@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 from django.conf import settings
 
@@ -21,6 +22,10 @@ class Book(models.Model):
 
     class Meta:
         unique_together = (('user', 'slug'))
+        ordering = ('-id',)
+
+    def get_absolute_url(self):
+        return reverse('books:detail', args=[self.user.username, self.slug])
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

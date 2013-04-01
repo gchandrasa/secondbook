@@ -136,8 +136,9 @@ INSTALLED_APPS = (
     'django_extensions',
     'easy_thumbnails',
     'compressor',
-    'registration',
+    'haystack',
 
+    'registration',
     'profiles',
     'books',
 )
@@ -190,6 +191,15 @@ TEST_DISCOVER_ROOT = path.join(TEST_DISCOVER_TOP_LEVEL, 'tests')
 FIXTURE_DIRS = (
     path.join(PROJECT_ROOT, "fixtures"),
 )
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': path.join(PROJECT_ROOT, 'whoosh_index'),
+    },
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 try:
     from settings_local import *
